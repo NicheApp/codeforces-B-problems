@@ -1,0 +1,39 @@
+https://codeforces.com/contest/1291/problem/B
+
+Approach -- the only difference in this question rest others that we can make element decrement by 1 only . we can't increment them--
+my first approach is divided into 2 parts--
+1st part -- here we will find a point where element will start decrement or we can say ak--
+the prefix part will be always true only in this condition (a[i]>=i) if a[i]<i that means this point is aK;
+2nd part -- after finding ak now we will check suffix part--
+if let say ak =5 than what can we do with its suffix part we need all elements  strictly decreasing--
+we have 5 options -- 4 3 2 1 0 so that array will become 5 4 3 2 1 0 -- by doing decrement operator we can elements like but
+what happens when elements are are more than 5 than we can't make them becoz ( for 5 we have only 5 options 0 to 4)
+or we can say for any a[i]  if we have a[i] or less than a[i] elements than we can make strictly decreasing else no --
+so whenever any  element voilets this condition than we can't make strictly decreasing.
+
+
+Soln-
+    #include <bits/stdc++.h>
+    using namespace std;
+     
+    int main(){ 
+    int t;cin>>t;
+    while(t--){
+    int n,i;cin>>n;int a[n]; 
+    for(i=0;i<n;i++) 
+    cin>>a[i];
+     int prefixEnd ;
+    for(i=0;i<n;i++){
+     if(a[i]<i)
+          break;
+      prefixEnd = i;}
+          
+    for(i=prefixEnd ;i<n;i++)
+    if(((n-1)-i)>(a[i]))
+    	   break;
+    	
+    i==n?cout<<"YES\n":cout<<"NO\n";	
+     
+    }
+    return 0;
+    }
