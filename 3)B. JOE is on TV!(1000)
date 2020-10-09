@@ -1,0 +1,12 @@
+#include <bits/stdc++.h>
+using namespace std;
+     
+ int main(){ 
+ float n,i,sum=0;cin>>n;
+ for(i=n;i>=1;i--)
+   sum+=1/i; 
+ printf("%0.12f",sum);
+   
+
+    return 0;
+    }
