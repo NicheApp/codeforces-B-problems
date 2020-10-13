@@ -1,0 +1,50 @@
+Ques-https://codeforces.com/contest/1322/problem/A
+
+#include <bits/stdc++.h>
+ using namespace std;
+ int main(){ 
+int n;
+cin>>n;
+string s;
+cin>>s;
+if(n%2)
+{cout<<-1<<endl;return 0;}
+char start='u';
+int val=0,count=0,ans=0,i;
+for(i=0;i<=n;i++)
+{
+		if(val==0)
+	{
+		if(start==')')
+	ans+=count;
+	count=0;
+	if(s[i]==')')
+	start=')';
+	else
+	start='(';		
+	}
+if(i==n)
+break;
+	if(s[i]==')')
+	{
+	val-=1;
+	count++;
+ 
+	
+	}else
+	{
+	val+=1;
+	count++;
+		
+	}
+	
+	
+}
+if(val==0)
+cout<<ans<<endl;
+else
+cout<<-1<<endl;
+ 
+ 
+    return 0;
+    
