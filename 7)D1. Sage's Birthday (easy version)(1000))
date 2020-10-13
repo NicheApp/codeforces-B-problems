@@ -1,0 +1,21 @@
+           Ques-https://codeforces.com/contest/1419/problem/D1
+           
+           #include <bits/stdc++.h>
+            using namespace std;
+        int main(){ 
+      int n,i;
+      cin>>n;
+      int a[n];
+      for(i=0;i<n;i++)
+      cin>>a[i];
+      cout<<(n-1)/2<<endl;
+      sort(a,a+n);
+      for(i=1;i<n;i=i+2){
+      cout<<a[i]<<" "<<a[i-1]<<" " ;
+      }
+      if(n%2!=0)
+      cout<<a[n-1];
+      cout<<endl;
+    	 
+        return 0;
+        }
