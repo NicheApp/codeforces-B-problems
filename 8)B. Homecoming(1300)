@@ -1,0 +1,54 @@
+    Ques-https://codeforces.com/contest/1315/problem/B
+    #include <bits/stdc++.h>
+     using namespace std;
+     int main(){ 
+      int t;
+      cin>>t;
+      while(t--){
+    	  int a,b,p,n,i;
+    	  cin>>a>>b>>p;
+    	  string s;cin>>s;n=s.length();
+    	  char turn;
+    if(s[n-1]==s[n-2]) 
+    s[n-1]=='A'?turn='B':turn='A';
+    else
+    s[n-1]=='A'?turn='A':turn='B';	
+     
+    	  
+    	for(i=n-1;i>=0;i--)
+    	{
+    		
+    	if(s[i]=='A'){
+    		if(turn!='A')
+    		{
+    		turn='A';
+    		if(p>=a)
+    		p-=a;
+    		else
+    		break;	}
+    }
+    else
+    {
+    if(turn!='B')
+    {
+    turn='B';
+    if(p>=b)
+    p-=b;
+    else
+    break;	
+    }	
+    	
+    }
+    	
+    }
+    if(i==n-1)
+    {cout<<n<<endl;continue;}
+    	  
+    	  cout<<i+2<<endl;
+    	  
+    	  
+    	 }
+     
+    	 
+        return 0;
+        }
