@@ -1,0 +1,90 @@
+Ques-10
+https://codeforces.com/problemset/problem/1328/B
+
+This question i have thinked two approaches ---
+
+1st solution->--------(EFFICIENT SOLUTION)
+
+#include <bits/stdc++.h>
+ using namespace std;
+ int main(){ 
+int t;
+cin>>t;
+while(t--)
+{
+long long  n,k,i,temp=0,sum=0,dif;
+	cin>>n>>k;
+	string s= string(n,'a');
+	for(i=1;i<n;i++)
+	{
+		long long z=(i*(i+1));
+	sum=z/2;
+
+	if(sum>=k)
+	break;	}
+  
+  temp=((i-1)*(i))/2;
+	dif=k-temp;
+	s[n-1-i]='b';
+	s[n-dif]='b';
+	
+	cout<<s<<endl;}
+    return 0;
+    }
+    
+   2nd solution-------------------(BRUTE FORCE APPROACH ITERATE ALL OVER THE PATTERNS)
+       #include<iostream>
+    using namespace std;
+    int main()
+    {   
+    	ios::sync_with_stdio(false);
+    	
+    	int t;
+    	cin>>t;
+    	while(t--)
+    	{
+    		int n,k,f1,f2;
+    		cin>>n>>k;
+    		string a = string(n,'a');
+    		
+    		a[n-1]='b';
+    		a[n-2]='b';
+    		f1=n-2;
+    		f2=n-1;
+    		k--;
+    		
+    		while(k--)
+    		{
+    		f2--;
+    		
+    		if(f1==f2)
+    		{
+    			a[n-1]='b';
+    			a[f1-1]='b';
+    			a[f1]='a';
+    			if((f1+1)!=(n-1))
+    			{a[f1+1]='a';}
+    			f1--;
+    			f2=n-1;
+    			
+    			
+    			}
+    			else
+    			{
+    			a[f2]='b';
+    			a[f2+1]='a';	
+    				
+    			}
+    			
+    			}
+    			cout<<a;
+    			cout<<endl;
+    			
+    	}
+    return 0;	
+    }
+   
+   
+   
+    
+    
