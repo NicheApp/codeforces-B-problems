@@ -1,0 +1,56 @@
+Ques- https://codeforces.com/contest/1333/problem/B
+
+
+
+    #include <bits/stdc++.h>
+     using namespace std;
+     int main(){ 
+    int t;
+    cin>>t;
+    while(t--)
+    {
+    int n,i;cin>>n;
+    int a[n],b[n];
+    for(i=0;i<n;i++)cin>>a[i];
+    for(i=0;i<n;i++)cin>>b[i];
+    bool pos=false,neg=false;
+    for(i=0;i<n;i++){
+    	
+    if(a[i]!=b[i])
+    {
+    if(b[i]>0)
+    {
+    if(pos==false)
+    {cout<<"NO\n";break;}	
+    }	
+    else if(b[i]<0)
+    {
+    if(neg==false)
+    {cout<<"NO\n";break;}	
+    }
+    else if(b[i]==0)
+    {
+    if(a[i]>0 && neg==false)
+    {cout<<"NO\n";break;}	
+    else if(a[i]<0 && pos==false)
+    	{cout<<"NO\n";break;}	
+    }
+    }
+     
+    if(a[i]>0)
+    	pos=true;
+    	if(a[i]<0)
+    	neg=true;
+    	if(pos && neg)
+    	{cout<<"YES\n";break;}
+     
+     
+    	
+    }
+     
+    if(i==n)
+    cout<<"YES\n";
+     
+    }
+        return 0;
+        }
