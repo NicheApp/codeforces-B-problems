@@ -1,0 +1,29 @@
+Ques- https://codeforces.com/contest/1333/problem/A
+
+    #include <bits/stdc++.h>
+     using namespace std;
+     int main(){ 
+    int t;
+    cin>>t;
+    while(t--){
+    int n,m,i,j;
+    cin>>n>>m;
+    cout<<"B";
+    for(i=1;i<m;i++)
+    cout<<"W";
+    cout<<endl;
+    for(i=1;i<n;i++)
+    {
+    for(j=0;j<m;j++)
+    {
+    cout<<"B";	
+    	
+    }
+    cout<<endl;
+    }
+     
+     
+     
+    }
+        return 0;
+        }
